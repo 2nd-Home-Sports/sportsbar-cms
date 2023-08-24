@@ -19,6 +19,12 @@
     },
     "longitude": {
       "type": "float"
+    },
+    "bars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bar.bar",
+      "mappedBy": "city"
     }
   }
 }

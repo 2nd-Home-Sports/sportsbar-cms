@@ -60,6 +60,12 @@
       "relation": "manyToMany",
       "target": "api::badge.badge",
       "inversedBy": "bars"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "bars"
     }
   }
 }
