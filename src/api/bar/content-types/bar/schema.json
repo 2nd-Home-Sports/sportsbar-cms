@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bars",
+  "info": {
+    "singularName": "bar",
+    "pluralName": "bars",
+    "displayName": "Bar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "bars"
+    },
+    "commentary": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "medias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "badges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::badge.badge",
+      "inversedBy": "bars"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "league": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::league.league",
+      "inversedBy": "teams"
+    },
+    "team_area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team-area.team-area",
+      "inversedBy": "teams"
+    },
+    "bars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bar.bar",
+      "mappedBy": "team"
+    }
+  }
+}
